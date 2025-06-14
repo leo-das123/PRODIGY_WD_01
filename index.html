@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 60px; /* To avoid content going under fixed nav */
+      box-sizing: border-box;
+    }
+
+    /* NAVIGATION MENU */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    nav.scrolled {
+      background-color: #222;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4CAF50;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to Our Landing Page</h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>About Us</h2>
+      <p>We provide innovative solutions to enhance your business. Join us on our journey to success.</p>
+    </section>
+
+    <section class="features" id="features">
+      <h2>Our Features</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Speed</td>
+            <td>Fast and efficient service delivery.</td>
+          </tr>
+          <tr>
+            <td>Support</td>
+            <td>24/7 customer support for all your needs.</td>
+          </tr>
+          <tr>
+            <td>Innovation</td>
+            <td>Creative and unique solutions for your business.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Opinion:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your opinion about me" required></textarea>
+
+        <button type="submit" id="submitButton" class="btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Landing Page. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll behavior for nav background
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
